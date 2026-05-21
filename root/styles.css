@@ -1,10 +1,10 @@
 /* --- Global Theme Setup --- */
 :root {
-    --primary-dark: #0a142f;    /* Elegant deep navy background */
-    --accent-blue: #93c5fd;    /* Soft sky blue accents */
+    --primary-dark: #0a142f;    
+    --accent-blue: #93c5fd;    
     --text-light: #ffffff;
     --text-muted: #cbd5e1;
-    --card-bg-light: #e0f2fe;  /* Beautiful light blue tone for details */
+    --card-bg-light: #e0f2fe;  
     --border-radius: 20px;
 }
 
@@ -37,7 +37,7 @@ body {
     flex-direction: column;
 }
 
-/* --- Decorative Geometric Background Accents --- */
+/* --- Decorative Background Shape --- */
 .shape-top-right {
     position: absolute;
     top: -40px;
@@ -50,22 +50,12 @@ body {
     z-index: 1;
 }
 
-.shape-top-left {
-    position: absolute;
-    top: -60px;
-    left: -60px;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(147,197,253,0.2) 0%, rgba(10,20,47,0) 70%);
-    z-index: 1;
-}
-
 /* --- Internal Main Layout Split --- */
 .flyer-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1.2fr 0.9fr; 
     gap: 30px;
-    padding: 45px 45px 25px 45px;
+    padding: 0 45px 25px 45px; 
     z-index: 2;
 }
 
@@ -75,16 +65,40 @@ body {
     flex-direction: column;
 }
 
-.logo-container {
-    margin-bottom: 25px;
+/* Asymmetrical top left logo panel background shape */
+.logo-accent-frame {
+    background-color: var(--accent-blue);
+    width: 240px;
+    height: 155px;
+    margin-left: -45px;
+    margin-bottom: 35px;
+    border-bottom-right-radius: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.logo-placeholder {
-    height: 65px;
+.logo-wrapper {
+    background: var(--accent-blue);
+    padding: 0px 24px;
+    border: 1px solid var(--accent-blue);
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.08);
+    width: 85%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 400px;
+}
+
+.actual-logo {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    /* Temp filter to make stand-in text readable if image is missing */
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-radius: 12px;
 }
 
 .main-header h1 {
@@ -110,7 +124,6 @@ body {
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-bottom: 16px;
-    position: relative;
 }
 
 .activities-list {
@@ -126,7 +139,6 @@ body {
     padding-left: 20px;
 }
 
-/* Custom polished bullet points */
 .activities-list li::before {
     content: "•";
     color: var(--accent-blue);
@@ -177,88 +189,118 @@ body {
     max-width: 320px;
 }
 
-/* --- Right Column: Modern Dynamic Structural Collage --- */
+/* --- Right Column: Layered Structural Showcase Layout --- */
 .image-column {
     position: relative;
-    height: 480px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 12px;
-}
-
-/* Shared image parameters */
-.image-frame {
-    background-color: #1e293b;
-    border: 3px solid var(--primary-dark);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 540px; 
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 35px;
 }
 
-.image-frame span {
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    font-weight: bold;
-    text-align: center;
-    padding: 5px;
-}
-
-.image-frame:hover {
-    transform: scale(1.03);
-    z-index: 10 !important;
-}
-
-/* Main Background Church Frame Placement */
-.main-bg-frame {
-    grid-column: 1 / 7;
-    grid-row: 1 / 5;
-    background-image: url('YOUR_CHURCH_IMAGE_PATH_HERE.jpg'); /* Insert main image path */
-}
-
-/* Overlay Photo Grid Layout Blocks */
-.img-block-1 {
-    grid-column: 4 / 7;
-    grid-row: 1 / 3;
-    z-index: 2;
-    background-image: url('IMAGE_1_PATH.jpg');
-}
-
-.img-block-2 {
-    grid-column: 1 / 4;
-    grid-row: 3 / 5;
-    z-index: 2;
-    background-image: url('IMAGE_2_PATH.jpg');
-}
-
-.img-block-3 {
-    grid-column: 1 / 3;
-    grid-row: 5 / 7;
-    z-index: 2;
-    background-image: url('IMAGE_3_PATH.jpg');
-}
-
-.img-block-4 {
-    grid-column: 3 / 7;
-    grid-row: 4 / 6;
+/* Base Level: Waterfall Background Landscape */
+.main-background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
     z-index: 1;
-    background-image: url('IMAGE_4_PATH.jpg');
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
-.img-block-5 {
-    grid-column: 4 / 7;
-    grid-row: 5 / 7;
-    z-index: 3;
-    background-image: url('IMAGE_5_PATH.jpg');
+.main-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* --- Lower Footer Branding Sections --- */
+/* Mid/Top Level: Overlaid Stacked Foreground Elements */
+.floating-placeholders {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+    width: 92%; 
+}
+
+/* Shared structural formatting for image frames */
+.image-frame {
+    background-color: #ffffff; 
+    border: 4px solid #ffffff; 
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.panel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Floating Component Text Highlight Card */
+.text-frame {
+    background-color: var(--primary-dark);
+    border: 2px solid rgba(147, 197, 253, 0.3);
+    padding: 16px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.text-frame h3 {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.text-frame p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Clean Hover Micro-interactions */
+.image-frame:hover, .text-frame:hover {
+    transform: translateY(-4px) scale(1.02);
+    z-index: 5;
+}
+
+/* Alternating sizing and spatial layout configurations */
+.panel-one {
+    width: 82%;
+    height: 140px;
+    align-self: flex-start;
+}
+
+.panel-two {
+    width: 85%;
+    height: 145px;
+    align-self: flex-end;
+}
+
+.placeholder-three {
+    width: 80%;
+    height: 130px;
+    align-self: flex-start;
+}
+
+.panel-three {
+    width: 75%;
+    align-self: center;
+    backdrop-filter: blur(4px);
+    background-color: rgba(10, 20, 47, 0.9);
+}
+
+/* --- Lower Footer System Styling --- */
 .flyer-footer {
     background-color: var(--accent-blue);
     padding: 15px 45px;
@@ -309,11 +351,6 @@ body {
     justify-content: center;
     font-size: 0.85rem;
     text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.social-icons a:hover {
-    background-color: #0f172a;
 }
 
 .social-handle {
@@ -322,20 +359,23 @@ body {
     font-weight: 700;
 }
 
-/* --- Mobile System Responsiveness --- */
+/* --- System Adaptability Layout --- */
 @media (max-width: 768px) {
     .flyer-grid {
         grid-template-columns: 1fr;
-        padding: 30px 24px;
+        padding: 0 24px 24px 24px;
+    }
+    .logo-accent-frame {
+        margin-left: -24px;
     }
     .image-column {
-        height: 380px;
+        height: 460px;
+        margin-top: 10px;
     }
     .flyer-footer {
         flex-direction: column;
         gap: 15px;
         padding: 20px 24px;
-        text-align: center;
     }
     .contact-bar {
         flex-direction: column;
