@@ -91,7 +91,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-img{
+
+img {
     height: 400px;
 }
 
@@ -381,4 +382,100 @@ img{
         flex-direction: column;
         gap: 10px;
     }
+}
+
+/* --- Photo Library Modal & Trigger Styling --- */
+.gallery-trigger {
+    cursor: pointer;
+    position: relative;
+}
+
+.view-more-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 20, 47, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--text-light);
+    font-weight: 700;
+    z-index: 10;
+    font-size: 1.1rem;
+    gap: 8px;
+}
+
+.gallery-trigger:hover .view-more-overlay {
+    opacity: 1;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(15, 23, 42, 0.9); 
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--primary-dark);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--text-muted);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--accent-blue);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    /* Set back to auto height for the grid to prevent conflicts with the global img rule */
+    height: 180px; 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px) scale(1.03);
+    border: 2px solid var(--accent-blue);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }

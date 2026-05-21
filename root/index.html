@@ -64,7 +64,11 @@
                         <img src="assets/photo_5801037453278777002church_m.jpg" alt="Livingstonia Church" class="panel-img">
                     </div>
                     
-                    <div class="image-frame panel-two">
+                    <!-- MODIFIED: This is now the clickable gallery trigger -->
+                    <div class="image-frame panel-two gallery-trigger" onclick="openModal()">
+                        <div class="view-more-overlay">
+                            <span><i class="fa-solid fa-images"></i> View Gallery</span>
+                        </div>
                         <img src="assets/photo_5801037453278777004canaopy_y (1).jpg" alt="Livingstonia Accommodation" class="panel-img">
                     </div>
                     
@@ -95,6 +99,26 @@
         </footer>
 
     </div>
+
+    <!-- PHOTO LIBRARY MODAL -->
+    <div id="photoLibraryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>More Photos</h2>
+            
+            <div class="gallery-grid">
+                <!-- REPLACE THESE LINKS WITH YOUR OWN PICTURES -->
+                <img src="./galery/photo_5801037453278777004_y.jpg" alt="Gallery Image 1">
+                <img src="./galery/photo_5801037453278777101_x (1).jpg" alt="Gallery Image 2">
+                <img src="./galery/photo_5801037453278777102_x (1).jpg" alt="Gallery Image 3">
+                <img src="./galery/photo_5801037453278777105_m (1).jpg" alt="Gallery Image 4">
+                <img src="./galery/photo_5801037453278777107_y (1).jpg" alt="Gallery Image 5">
+                <img src="./galery/photo_5801037453278777109_y (1).jpg" alt="Gallery Image 6">
+            </div>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
 
 </body>
 </html>
